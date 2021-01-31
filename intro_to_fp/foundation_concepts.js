@@ -23,3 +23,16 @@ console.log(greet('Guinevere.'))
 // Desired output:
 //  Hello, Arthur. 
 //  Hello, Guinevere. 
+const greet02 = (name, base_greeting) => {
+    return `${base_greeting} ${name}`
+}
+
+let greeting = 'Hello, '
+
+greet02('Arthur.', greeting)
+// now we can reuse greeting, and the greet function is pure
+
+console.log(greet02('Arthur.', greeting))
+// expected output:
+//  Hello, Arthur. 
+//  Hello, Arthur.
