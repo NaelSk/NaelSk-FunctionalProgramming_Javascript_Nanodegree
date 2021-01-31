@@ -1,7 +1,8 @@
 // Directions: Translate from normal function to pure function
-let greeting = 'Hello, '
+
 
 const greet = (name) => {
+    let greeting = 'Hello, '
     return greeting += name
 }
 
