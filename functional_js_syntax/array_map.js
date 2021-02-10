@@ -2,6 +2,12 @@
 const start = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // your code
+function reverse(ls) {
+    let reLs = []
+    ls.map(x => reLs.unshift(x))
+    return reLs;
+}
+console.log(reverse(start))
 
 // expected output: Array [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
@@ -10,7 +16,16 @@ const start = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const shipMates = [["Mal", "Captain"], ["Wash", "Pilot"], ["Zoey", "1st Mate"], ["Jayne", "Public Relations"]]
 
 // your code
+function concatWith(ls, op) {
+    const result = ls.join(op);
+    return result;
+}
+function JobName(ls) {
+    let result = ls.map(x => concatWith(reverse(x), ": "));
+    return result; 
+}
 
+console.log(JobName(shipMates))
 // expected output: Array ["Captain: Mal", etc...]
 
 // ----------------------------------------------------------
@@ -18,7 +33,14 @@ const shipMates = [["Mal", "Captain"], ["Wash", "Pilot"], ["Zoey", "1st Mate"], 
 const awayTeam = ["Picard", "Riker", "Troy", "Data"]
 
 // your code
-
+function evenOrOdd(str) {
+    if (str.length % 2 == 0) return str + ": even";
+    return str+": odd"
+}
+function nameEO(ls) {
+    return ls.map(x => evenOrOdd(x));
+}
+console.log(nameEO(awayTeam))
 // expected output: Array: ["Picard: even", "Riker: odd", etc...]
 
 // ----------------------------------------------------------
