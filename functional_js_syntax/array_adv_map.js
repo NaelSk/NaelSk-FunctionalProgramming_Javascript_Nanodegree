@@ -16,6 +16,14 @@ var index = [
     {key: 3, sector: 8346, t_score: 10, id: 'n9837ks857', value: 'Jawa'},
 ]
 
+function filterize(obj) {
+    let newObj = {};
+    newObj.id = (obj.id).substring(0, 3);
+    newObj.vale = obj.value;
+    return newObj;
+}
+let ind = index.map(obj => filterize(obj));
+console.log(ind)
 // Expected Output:
 // [
 //     {id: '123', value: 'Klingon'},

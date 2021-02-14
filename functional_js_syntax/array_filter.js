@@ -1,12 +1,15 @@
 // 1. Find all the words with more than 7 characters
 const words = ['tardis', 'grok', 'frak', 'blaster', 'klingon', 'shepherd']
-
+let w = words.filter(v => v.length > 7)
+console.log(w); 
 // expected output: Array ['shepherd']
+
 
 // ----------------------------------------------------------
 // 2. Find all even values
-const words = [12, 13, 14, 15, 16, 17]
-
+const numbers = [12, 13, 14, 15, 16, 17]
+let n = numbers.filter(v => (v%2)==0)
+console.log(n); 
 // expected output: Array [12, 14, 16]
 
 // ----------------------------------------------------------
@@ -41,6 +44,9 @@ const hunters = [
         status: 'active',
     },
 ]
+
+let h = hunters.filter(o => o.status=="active" )
+console.log(h); 
 
 // expected output: Array [
 //     {

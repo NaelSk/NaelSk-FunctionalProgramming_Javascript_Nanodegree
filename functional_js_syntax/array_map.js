@@ -49,7 +49,8 @@ console.log(nameEO(awayTeam))
 const sci_fi_shows = ['Manedlorian', 'Enterprise', 'Firefly', 'Battlestar Galactica']
 
 // your code
-
+let ls = sci_fi_shows.map((x, i, arr) => [x, i]);
+console.log(ls);
 // expected output: Array [['Manedlorian', 0], ['Enterprise', 1], ['Firefly', 2], ['Battlestar Galactica', 3]]
 
 // ----------------------------------------------------------
@@ -58,8 +59,10 @@ const sci_fi_shows = ['Manedlorian', 'Enterprise', 'Firefly', 'Battlestar Galact
 const numbers = [1, 2, 3, 4]
 
 // your code
-
+let ls_num = numbers.map((x, index, array) => array)
+console.log(ls_num)
 // expected output: Array [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]
+
 
 // Having trouble with creating a 2D array? 
 // Take a closer look at the last two arguments of map, one of them might be able to help

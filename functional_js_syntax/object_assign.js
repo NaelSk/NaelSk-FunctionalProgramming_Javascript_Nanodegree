@@ -42,3 +42,14 @@ state = Object.assign(state, incomingState);
 // } 
 
 // Your Code here
+const myNewState = {
+    hip: {
+        name: "Serenity",
+        class: "Firefly"
+    },
+    role: "Captain001",
+    workingday: 30
+}
+
+state = Object.assign(state, myNewState);
+console.log(state);

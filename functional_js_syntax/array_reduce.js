@@ -2,6 +2,8 @@
 const text = ['The ships', 'hung in the sky,', 'much the way', 'that bricks don`t']
 
 // Your Code Here
+const t = text.reduce((total, currentV) => total+currentV);
+console.log(t);
 
 // expected output: "The ships hung in the sky, much the way that bricks don't"
 
@@ -28,14 +30,21 @@ const scores = [
 ]
 
 // Your Code Here
+const winer = scores.reduce((total, currentV) => {
+    if (currentV.score > total.score) return currentV;
+    else return total;
+    }
+);
 
+console.log(winer.team);
 // expected output: "C"
 
 // ----------------------------------------------------------
 //    REAL LIFE EXAMPLE
 // Reduce can sometimes save us a lot of time -- if we remember to use it.
 // Instead of writing a complicated map or filter method and then calling the
-// name of the ship out of the retuned array, Return the name of the fastest
+// name of the ship out of the retuned array, Return the name of the fastestq
+
 // star ship
 
 const ships = [
@@ -57,6 +66,15 @@ const ships = [
     }
 ]
 
-// Your Code Here
+let fastest = ships.reduce((fastesShip, currentShip) => {
+    const currentSpeed = parseInt(currentShip.speed.slice(0, -1));
+    const fastestSpeed = parseInt(fastesShip.speed.slice(0, -1));
+    if (currentSpeed > fastestSpeed) return currentShip;
+    else return fastesShip;
+}
+);
 
+
+// Your Code Here
+console.log(fastest.name)
 // Expected output: Tie Fighters

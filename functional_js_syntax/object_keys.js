@@ -16,3 +16,5 @@ console.log(Object.keys(character));
 // This character has a(n) planet.
 // This character has a(n) job.
 // [ 'This character has a(n) id',  'This character has a(n) name',  'This character has a(n) race', 'This character has a(n) planet', 'This character has a(n) job' ]
+const keys = Object.keys(character).map(keyName => "This character has a(n)  ".concat(keyName));
+console.log(keys); 
