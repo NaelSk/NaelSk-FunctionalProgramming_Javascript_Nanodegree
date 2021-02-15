@@ -104,6 +104,9 @@ const characters = [
 
 // expected output: ['Mal Reynolds', 'Kathryn Janeway']
 
+const captains = characters.filter(currentV => (currentV.role == "Captain")).map(obj => obj.name).reverse();
+
+console.log(captains)
 // ----------------------------------------------------------
 
 // COMBINED PRACTICE 2
@@ -113,7 +116,25 @@ const characters = [
 // Group all characters by universe in a multidimensional array
 
 // Your Code here
+result02 = Object.values(characters.reduce(function (r, a) {
+    r[a.universe] = r[a.universe] || [];
+    r[a.universe].push(a);
+    return r;
+}));
 
+let result=  characters
+    .reduce((acc, curr, i, arr) => {
+        acc[curr.universe] = acc[curr.universe] === undefined ? [] : acc[curr.universe]
+        acc[curr.universe].push(curr)
+
+        if (i + 1 == arr.length) {
+            return Object.values(acc)
+        }
+
+        return acc
+    }, {})
+
+console.log(result);
 // expected output:
 
 // [ 
@@ -197,6 +218,29 @@ const characters = [
 // Your Code here
 
 // expected output: [ Marvin the Paranoid Android, Peter Venkman, Dr. Daniel Jackson ]
+const groupByUniverse = (acc, curr, i, arr) => {
+    acc[curr.universe] = acc[curr.universe] === undefined ? [] : acc[curr.universe]
+    acc[curr.universe].push(curr)
+
+    if (i + 1 == arr.length) {
+        return Object.entries(acc)
+            .filter(([_, characters]) => characters.length === 1)
+            .map(([_, characters]) => characters[0])
+    }
+
+    return acc
+}
+
+const soloCharacters = characters
+    .reduce(groupByUniverse, {})
+    .map(character => character.name)
+    .join(', ')
+
+console.log('soloCharacters:', soloCharacters)
+
+
+//const uniqueName = result.map(currV => Object.keys(currV));
+//console.log(uniqueName);
 
 // ----------------------------------------------------------
 
@@ -207,5 +251,9 @@ const characters = [
 // What is the average power level across all characters?
 
 // Your code here
+const avgPowerLvl = characters
+    .map(c => c.power_level)
+    .reduce((acc, curr, i) => (acc += curr) / i)
 
+console.log('avgPowerLvl:', avgPowerLvl)
 // expected output: 68.71319452795147
