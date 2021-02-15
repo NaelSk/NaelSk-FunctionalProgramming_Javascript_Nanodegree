@@ -23,3 +23,9 @@ const useStarWarsWeapon = weaponsFromUniverse('Star Wars')
 
 console.log(useStarWarsWeapon('Blaster')) // console logs 'used Blaster: Pew Pew'
 console.log(useStarWarsWeapon('Noisy Cricket')) // console logs 'Noisy Cricket is not a part of the Star Wars universe'
+
+
+const stasis = (zone, depth) =>
+	(zone * 327) / (depth * .24)
+
+console.log(typeof stasis);
