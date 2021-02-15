@@ -9,8 +9,8 @@ weaponsWithNoises = [
 function weaponsFromUniverse(universe) {
 	// ...Your code here!
 	return (name => {
-		let universeWeapons = weaponsWithNoises.filter(curVale => curVale.universe === universe).filter(weapon => weapon.name === name);
-		let foundedWeapons = (universeWeapons.find(x => x.name === name));
+		const  universeWeapons = weaponsWithNoises.filter(curVale => curVale.universe === universe).filter(weapon => weapon.name === name);
+		const foundedWeapons = (universeWeapons.find(x => x.name === name));
 		 if (foundedWeapons==undefined) return `${name} is not a part of ${universe} universe `;
 		 else return `used ${name}: ${foundedWeapons.noise} `;
 	})
