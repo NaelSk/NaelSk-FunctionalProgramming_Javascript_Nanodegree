@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\data_manipulations",
+    "\\render_method_exercise"
   ],
-  "SelectedNode": "\\hof_2.js",
+  "SelectedNode": "\\render_method_exercise\\render_method.js",
   "PreviewInSolutionExplorer": false
 }
